@@ -45,7 +45,7 @@ function sheHeader() {
 	var scroll_distance = data_settings["scroll_distance"];
 	var she_offset = data_settings["she_offset_top"];
 	var she_padding = data_settings["she_padding"];
-	// var she_width = data_settings["she_width"];
+	var she_width = data_settings["she_width"];
 	var transparent_header = data_settings["transparent_header_show"];
 	var	background = data_settings["background"];
 	var bottom_border_color = data_settings["custom_bottom_border_color"],
@@ -72,15 +72,15 @@ function sheHeader() {
     if (width >= 1025) {
         she_offset = data_settings["she_offset_top"];
         she_padding = data_settings["she_padding"];
-        // she_width = data_settings["she_width"];
+        she_width = data_settings["she_width"];
     }else if (width > 767 && width < 1025) {
         she_offset = data_settings["she_offset_top_tablet"];
         she_padding = data_settings["she_padding_tablet"];
-        // she_width = data_settings["she_width_tablet"];
+        she_width = data_settings["she_width_tablet"];
     }else if (width <= 767) {
         she_offset = data_settings["she_offset_top_mobile"];
         she_padding = data_settings["she_padding_mobile"];
-        // she_width = data_settings["she_width_mobile"];
+        she_width = data_settings["she_width_mobile"];
     }
 	
 	// add transparent class
@@ -290,18 +290,22 @@ function sheHeader() {
 				header.css("background-color", background);
 				header.css("border-bottom", bottom_border);
 
-                if ( document.body.classList.contains('admin-bar') ) {
-                    header.css("top", (32 + she_offset.size) + she_offset.unit);
-                } else {
-                    header.css("top", she_offset.size + she_offset.unit);
+                header.css("top", she_offset.size + she_offset.unit);
+
+                if (width >= 768) {
+                    if ( document.body.classList.contains('admin-bar') ) {
+                        header.css("top", (32 + she_offset.size) + she_offset.unit);
+                    }
                 }
 
                 header.css("padding-top", she_padding.top + she_padding.unit);
                 header.css("padding-bottom", she_padding.bottom + she_padding.unit);
                 header.css("padding-left", she_padding.left + she_padding.unit);
                 header.css("padding-right", she_padding.right + she_padding.unit);
+                header.css("width", she_width.size + she_width.unit);
+                // header.attr("style", "width: " + she_width.size + she_width.unit + " !important;");
                 // header.css("width", she_width.size + she_width.unit);
-
+                
 				header.removeClass('she-header-transparent-yes');
 				
 				if( shrink_header == "yes" ) {
@@ -332,7 +336,7 @@ function sheHeader() {
                     header.css("padding-bottom", "");
                     header.css("padding-left", "");
                     header.css("padding-right", "");
-                    // header.css("width", "");
+                    header.css("width", "");
 				
 					if(transparent_header == "yes" ){
 						header.addClass('she-header-transparent-yes');
