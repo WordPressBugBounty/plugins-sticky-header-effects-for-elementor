@@ -2,9 +2,9 @@
 Contributors: posimyththemes, parthh2510, adityaarsharma, rwattner, sagarpatel124
 Tags: Elementor, Sticky Header, Fixed Header, Transparent Header, Elementor Header
 Requires at least: 6.3
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -223,6 +223,10 @@ Sticky Header Effects for Elementor may connect to the external services below o
 
 
 == Changelog ==
+
+= 2.2.2 =
+- Maintenance: WordPress 7.1 compatibility update
+- Maintenance: Elementor 4.2 and Elementor Pro 4.1 compatibility update
 
 = 2.2.1 =
 - Added: Privacy: Data sharing is off by default. When enabled, shared non-sensitive details help us improve the plugin and build a better experience for users
